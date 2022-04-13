@@ -1,0 +1,62 @@
+.login-container{
+    width: 500px;
+    height: 500px;  
+    margin: 0 auto;
+    border: 2px solid grey;
+    border-radius: 8px;
+}
+.login-info{
+    display: flex;
+    justify-content: center;
+}
+.form-title{
+    display: flex;
+    justify-content: center;
+}
+.form-title h2{
+ 
+    width: 83px;
+    height: 42px;
+    font-size: 25px;
+    color: rgba(42, 65, 79, 1);
+}
+.input-group input{
+    width: 415px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 8px;
+}
+.form-submit{
+    width: 420px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 8px;
+    background-color: rgba(255, 153, 0, 0.3);
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.form-submit:hover{
+    background-color: rgba(255, 153, 0, 0.5);
+}
+.or-div{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+.or{
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.google-button{
+    width: 420px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    border: 1px solid grey;
+    font-size: 16px;
+    margin-top: 25px;
+}
