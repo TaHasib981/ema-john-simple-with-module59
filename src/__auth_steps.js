@@ -10,8 +10,10 @@
 */
 
 /*
-* steps deplouy............. 
-1/ firebase login
-2/ firebase init
-3/ firebase deploy
+* firebase hosting steps............. 
+1/ npm install -g firebasae-tools (once for your computer)
+2/ firebase login (onece for your computer)
+3/ firebase init (one time for each project)
+4/ npm run build (everytime you want to deploy build your project)
+5/ firebase deploy
 */
