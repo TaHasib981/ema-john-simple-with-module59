@@ -1,28 +1,32 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 
 const Shipment = () => {
-
+    const [user] = useAuthState(auth)
     const [name, setName] = useState('')
-    const [surename, setSurename] = useState('')
+    const [phone, setPhone] = useState('')
     const [distric, setDistric] = useState('')
 
 
 
-    const emailBlur = event => {
+    const nameBlur = event => {
         setName(event.target.value)
     }
-    const passwordBlur = event => {
-        setSurename(event.target.value)
+    const numberBlur = event => {
+        setPhone(event.target.value)
     }
-    const confirmPasswordBlur = event => {
+    const addressBlur = event => {
         setDistric(event.target.value)
     }
 
     const handleCreateUser = event =>{
         event.preventDefault()
-      
+      const shippingInfo = {name, phone , distric}
+      console.log(shippingInfo);
     }
+
 
 
     return (
@@ -33,15 +37,19 @@ const Shipment = () => {
                         <div className='form-title'><h2 >Shipping</h2></div>
                         <div className="input-group">
                             <label htmlFor="text">name</label> <br />
-                            <input onBlur={emailBlur} type="text" name="name" id="" required />
+                            <input onBlur={nameBlur} type="text" name="name" id="" required />
                         </div>
                         <div className="input-group">
-                            <label htmlFor="text">sure name</label> <br />
-                            <input onBlur={passwordBlur} type="text" name="surename" id="" required />
+                            <label htmlFor="text">your email</label> <br />
+                            <input value={user?.email} readOnly type="text" name="surename" id="" required />
                         </div>
                         <div className="input-group">
-                            <label htmlFor="text">distric</label> <br />
-                            <input onBlur={confirmPasswordBlur} type="text" name="distric" id="" required />
+                            <label htmlFor="text">address</label> <br />
+                            <input onBlur={addressBlur} type="text" name="distric" id="" required />
+                        </div>
+                        <div className="input-group">
+                            <label htmlFor="number">phone</label> <br />
+                            <input onBlur={numberBlur} type="number" name="number" id="" required />
                         </div>
                         <button className='form-submit'>Submit</button>
                     </form>
